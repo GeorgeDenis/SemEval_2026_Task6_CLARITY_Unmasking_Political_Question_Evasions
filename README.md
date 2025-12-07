@@ -1,4 +1,37 @@
+# 1 Problem Definition
 
+## 1.1. Problem Definition: Political Equivocation and Response Clarity
+
+Evasion is not only the concept of lying but also a phenomen that describes a non-straightforward type of communication, which is furthermore characterised by lack of clarity. This also includes speech acts such as contradictions, inconsistencies, subject switches, incomplete sentences, misunderstandings, obscure mannerism of speech. All of this making the political speech susceptible to multiple interpretations in the public eyes.
+On this idea, an automated system task would be to clasify the relation between a Q&A pair in 3 categories: 
+- Clear Reply: replies that admint only one interpretation
+- Ambivalent: response is given in the form of a valid
+answer but allows for multiple interpretations
+- Clear Non-Reply: containing responses where the answerer openly
+refuses to share information
+
+## 1.2. Distinction from Standard Question Answering and Intent Detection
+
+It is crucial to distinguish the task of Response Clarity Evaluation from standard Question Answering (QA) or Deceptive Intent Detection. Traditional QA tasks often focus on the "answerability" of a question given a text span or detecting the responder's subjective intent to deceive. However, assessing intent is inherently subjective and prone to annotator bias. The proposed approach in this project deviates from analyzing intent and instead focuses exclusively on the informational alignment between the question and the response. This shifts the classification objective from a subjective "valid/invalid" judgment to a more objective assessment of whether a response can be interpreted unambiguously. By focusing on the Clarity/Ambiguity dimension rather than Truthfulness, the task creates a deterministic framework suitable for NLP models.
+
+## 1.3. Linguistic Challenges and Multi-Part
+
+Political interviews often contain multi-part questions, queries containing multiple distinct sub-questions. A politician might answer one part of the question clearly while evading another, making the classification of the entire response as a single unit problematic. To address this, the problem definition requires decomposing these complex interactions into singular QA pairs (sQAs) to retain fine-grained information. Furthermore, accurately determining clarity requires the model to encode and reason over long contexts, a capability that has only recently become feasible with the advent of Large Language Models.
+
+
+# 2 Traditional Methods
+
+## 2.1. Text Representation
+
+The standard method to transform text into numeric format was the Bag-of-Words model, where the word order is ignored, the text becoming a set of unordered frequencies. Furthermore, to evaluate the relevance of an answer to a question, the method needed to compute the TF-IDF vectors. If the question and the answer had sparse common words, the similitude score was big. The limitation of this method is that it cannot distinguish between negations and nuances. Phrases like "I will not raise taxes" and "I will raise taxes" look almost identical to a BoW algorithm, making evasion detection extremely difficult.
+
+## 2.2. Classification Algorithms
+
+Before the widespread adoption of deep neural networks, detecting relationships between texts (such as question-answer relationships) relied on supervised learning algorithms that used hand-crafted features. 
+
+Naive Bayes: A probabilistic algorithm made on top of the Bayes theorem, used frequently for text classification (e.g., spam vs. non-spam). While fast, Naive Bayes is making the assumption that each word is independent in relation with the others, a false assumption in the political speech, where context is crucial.
+
+SVM: The algorithm tries to find a hyperplane that optimally separates the classes in a multidimensional space. Although SVM performed better than Naive Bayes on short texts, its performance dropped drastically when evasion was based on irony or subtle topic switching, as it could not capture complex semantic relationships.
 
 
 
@@ -83,7 +116,14 @@ This allows every token in the question to attend to every token in the answer, 
 This joint encoding is essential for the CLARITY taxonomy, because the distinction between a Clear Non-Reply and an Ambivalent Reply, or between Deflection and General Evasion, hinges on how the content of the answer diverges from the informational target of the question. A cross-encoder does not merely encode the answer; it implicitly learns the rhetorical relationship between the two segments, mirroring the judgment process followed by annotators in the dataset.  
 
 
+# 5 Clarity Dataset
 
+To train and evaluate the proposed model, this paper uses the CLARITY dataset, introduced by Thomas et al. (2024). It is an essential benchmark in the field of NLP for political discourse analysis, specifically designed to distinguish between responses that directly address a question and those that are evasive or irrelevant.
+
+
+## 5.1. Data Composition and Source
+
+CLARITY contains 3445 question and responses pairs from 287 unique presidentials interviews of US Presidents spanning from 2006 until 2023. This diversity is crucial to avoid ideological bias and to train a model capable of generalizing regardless of the speaker's political orientation.
 
 
 # 6 Comparative Summary and Conclusions
