@@ -125,6 +125,34 @@ To train and evaluate the proposed model, this paper uses the CLARITY dataset, i
 
 CLARITY contains 3445 question and responses pairs from 287 unique presidentials interviews of US Presidents spanning from 2006 until 2023. This diversity is crucial to avoid ideological bias and to train a model capable of generalizing regardless of the speaker's political orientation.
 
+![alt text](image-2.png)
+
+It is clearly observed that the "Ambivalent" class is dominant, with over 2000 instances, which is approximately double the "Clear Reply" class (~1050). The "Clear Non-Reply" class is the least represented (< 400 instances). From this stats we can draw the hypothesis that politicians prefer to give a vague answer ("Ambivalent") than to explicitly refuse to answer ("Clear Non-Reply"), because direct refusal can be negatively charged by the public.
+
+![alt text](image-3.png)
+
+Although ambiguity dominates overall, taken individually, the "Explicit" label is the most common single strategy (>1000). This means that when they don't use it, politicians are clear.
+Preferred Evasion Strategies: When politicians decide to be evasive, the preferred strategies are, in order:
+- Dodging: Ignoring the question and moving on to another topic (~700).
+- Implicit: Answers that suggest something without saying it directly (~500).
+- General & Deflection: Generalizing or deflecting attention (~400 each).
+
+![alt text](image-1.png)
+
+Who is the most direct?
+- Joe Biden seems to be the most direct, with the highest score on Explicit (0.37), followed by George W. Bush (0.34).
+
+Who is the most evasive/sophisticated?
+- Barack Obama has the lowest score on Explicit responses (0.22 - Explicit). Instead, he uses the Implicit (0.18) and Dodging (0.23) strategies the most. This suggests a complex rhetorical style, based on nuances and subtexts, which is harder to decode by a simple algorithm.
+
+Donald Trump: He has a mixed style. Although he has a relatively high score on Explicit (0.33), he uses a lot of Dodging (0.20) but very little Implicit (0.12) compared to Obama.
+
+
+
+## 5.1. Data Composition and Source
+
+CLARITY contains 3445 question and responses pairs from 287 unique presidentials interviews of US Presidents spanning from 2006 until 2023. This diversity is crucial to avoid ideological bias and to train a model capable of generalizing regardless of the speaker's political orientation.
+
 
 # 6 Comparative Summary and Conclusions
 
