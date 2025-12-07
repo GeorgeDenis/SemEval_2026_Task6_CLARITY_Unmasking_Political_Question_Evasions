@@ -148,12 +148,6 @@ Who is the most evasive/sophisticated?
 Donald Trump: He has a mixed style. Although he has a relatively high score on Explicit (0.33), he uses a lot of Dodging (0.20) but very little Implicit (0.12) compared to Obama.
 
 
-
-## 5.1. Data Composition and Source
-
-CLARITY contains 3445 question and responses pairs from 287 unique presidentials interviews of US Presidents spanning from 2006 until 2023. This diversity is crucial to avoid ideological bias and to train a model capable of generalizing regardless of the speaker's political orientation.
-
-
 # 6 Comparative Summary and Conclusions
 
 The baselines reported in the original “I Never Said That” study reinforce this developmental arc. Traditional linear models trained on handcrafted features achieved only modest performance, especially on the nine-category evasion task. LSTM-based models improved the situation slightly but struggled with the nuanced boundary cases that define political communication. The most substantial gains emerged with Transformer-based models, particularly cross-encoders, whose performance provided the first strong baselines for both levels of the taxonomy.  
