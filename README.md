@@ -148,3 +148,48 @@ A synthetic comparison of model families can be summarized as follows:
 | Advanced Transformers (DeBERTa) | Best-in-class reasoning, fine-grained discrimination | Heavy inference cost                       | 80%+ F1                   |
 
 Overall, the State of the Art clearly favors Transformer-based cross-encoder architectures, especially for tasks where subtle deviations between question and answer reveal the speaker's intent. The CLARITY taxonomy, with its hierarchical structure, aligns closely with the multi-layer representations learned by these models, making modern Transformers not just suitable but essential for high-performance evasion classification.
+
+
+# References
+
+* Thomas, K., Filandrianos, G., Lymperaiou, M., Zerva, C., & Stamou, G. (2024).
+  [“I Never Said That”: A dataset, taxonomy and baselines on response clarity classification](https://aclanthology.org/2024.findings-emnlp.300).
+  Findings of EMNLP 2024.
+
+* HuggingFace QEvasion Dataset Card.
+  [QEvasion: Political Question Evasion Dataset](https://huggingface.co/datasets/ailsntua/QEvasion).
+
+* Mikolov, T., Chen, K., Corrado, G., & Dean, J. (2013).
+  [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/abs/1301.3781).
+  arXiv preprint arXiv:1301.3781.
+
+* Pennington, J., Socher, R., & Manning, C. D. (2014).
+  [GloVe: Global Vectors for Word Representation](https://nlp.stanford.edu/projects/glove/).
+  EMNLP 2014.
+
+* Hochreiter, S., & Schmidhuber, J. (1997).
+  [Long Short-Term Memory](https://doi.org/10.1162/neco.1997.9.8.1735).
+  Neural Computation, 9(8), 1735–1780.
+  Summary article: [https://colah.github.io/posts/2015-08-Understanding-LSTMs/](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+* Vaswani, A., Shazeer, N., Parmar, N., et al. (2017).
+  [Attention Is All You Need](https://arxiv.org/abs/1706.03762).
+  NeurIPS 2017.
+  Illustrated explanation: [https://jalammar.github.io/illustrated-transformer/](https://jalammar.github.io/illustrated-transformer/)
+
+* Devlin, J., Chang, M.-W., Lee, K., & Toutanova, K. (2019).
+  [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://aclanthology.org/N19-1423).
+  NAACL-HLT 2019.
+  Documentation summary: [https://huggingface.co/docs/transformers/model_doc/bert](https://huggingface.co/docs/transformers/model_doc/bert)
+
+* He, P., Liu, X., Gao, J., & Chen, W. (2021).
+  [DeBERTa: Decoding-enhanced BERT with Disentangled Attention](https://arxiv.org/abs/2006.03654).
+  ICLR 2021.
+
+* Graves, A. (2012).
+  [Supervised Sequence Labelling with Recurrent Neural Networks](https://link.springer.com/book/10.1007/978-3-642-24797-2).
+  Springer.
+
+* Cho, K., van Merrienboer, B., Bahdanau, D., & Bengio, Y. (2014).
+  [Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/abs/1406.1078).
+  arXiv preprint arXiv:1406.1078.
